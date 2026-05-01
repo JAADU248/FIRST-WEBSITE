@@ -66,94 +66,23 @@ body {
   font-size: 14px;
 }
 .hero {
+  display: flex;
   height: 100vh;
   background: #000;
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 80px;
 }
 
+/* LEFT */
 .hero-left {
   width: 50%;
+  padding: 100px 80px;
 }
 
+/* RIGHT */
 .hero-right {
-  width: 50%;
-}
-.highlight {
-  color: #FF2D2D;
-}
-body {
-  font-family: 'Poppins', sans-serif;
-}
-.hero-left h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: 90px;
-  line-height: 1;
-}
-/* Tag (TECHNOLOGY SOLUTIONS) */
-.tag {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: #FF2D2D;
-  margin-bottom: 10px;
-}
-
-/* Description */
-.desc {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #aaa;
-  max-width: 400px;
-  line-height: 1.6;
-}
-
-/* CTA Button (Brutal style) */
-.cta-btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 35px;
-  background: #FF2D2D;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 1px;
-  transition: 0.3s;
-}
-
-/* Hover */
-.cta-btn:hover {
-  background: transparent;
-  border: 1px solid #FF2D2D;
-  color: #FF2D2D;
-}
-.hero {
-  position: relative;
-  height: 100vh;
-  background: #000;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 80px;
-  overflow: hidden;
-}
-
-/* LEFT SIDE */
-.hero-left {
-  width: 50%;
-  z-index: 2;
-}
-
-/* RIGHT IMAGE LAYER */
-.hero-right {
-  position: absolute;
-  right: 0;
-  top: 0;
   width: 50%;
   height: 100%;
+  overflow: hidden;
 }
 
 .hero-right img {
