@@ -117,168 +117,10 @@ nav a:hover::after {
 
 .hero-right img {
   width: 100%;
-  max-width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
-}
-
-/* Geometric overlay elements */
-.overlay-square {
-  position: absolute;
-  top: 50%;
-  right: 100px;
-  transform: translateY(-50%);
-  width: 100px;
-  height: 100px;
-  background: #FF2D2D;
-  opacity: 0.7;
-  z-index: 5;
-}
-
-.geo-line {
-  position: absolute;
-  background: #FF2D2D;
-  opacity: 0.1;
-  z-index: 3;
-}
-
-.geo-line-h {
-  top: 55%;
-  right: 40px;
-  width: 200px;
-  height: 2px;
-  background: #FF2D2D;
-  opacity: 0.15;
-}
-
-.geo-line-v {
-  top: 65px;
-  right: 160px;
-  width: 2px;
-  height: 280px;
-  background: #FF2D2D;
-  opacity: 0.15;
-}
-
-.geo-accent-1 {
-  position: absolute;
-  top: 70%;
-  right: 280px;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #FF2D2D;
-  opacity: 0.15;
-  z-index: 4;
-}
-
-.geo-accent-2 {
-  position: absolute;
-  top: 45%;
-  right: 140px;
-  width: 20px;
-  height: 20px;
-  background: #FF2D2D;
-  opacity: 0.1;
-  z-index: 4;
-}
-
-.accent-blue {
-  position: absolute;
-  top: 42%;
-  right: 180px;
-  width: 80px;
-  height: 80px;
-  background: #0066FF;
-  opacity: 0.6;
-  z-index: 4;
-}
-
-.accent-yellow {
-  position: absolute;
-  top: 65%;
-  right: 170px;
-  width: 60px;
-  height: 60px;
-  background: #FFD600;
-  opacity: 0.65;
-  z-index: 4;
-}
-
-/* Subtle tech overlays - wireframes, crosshairs, thin lines */
-.wireframe {
-  position: absolute;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: transparent;
-  z-index: 4;
-  pointer-events: none;
-}
-
-.wire-1 {
-  width: 160px;
-  height: 110px;
-  top: 38%;
-  right: 110px;
-  transform: translateY(-50%);
-}
-
-.wire-2 {
-  width: 100px;
-  height: 80px;
-  top: 60%;
-  right: 160px;
-  transform: translateY(-50%);
-}
-
-.crosshair {
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  z-index: 5;
-  pointer-events: none;
-}
-.crosshair::before,
-.crosshair::after {
-  content: '';
-  position: absolute;
-  background: rgba(255,255,255,0.12);
-}
-.crosshair::before {
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-}
-.crosshair::after {
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 2px;
-  width: 100%;
-}
-.cross-1 { top: 20%; right: 200px; }
-.cross-2 { top: 45%; right: 140px; }
-
-.thin-line {
-  position: absolute;
-  background: rgba(255,255,255,0.1);
-  z-index: 3;
-  pointer-events: none;
-}
-
-.thin-h {
-  height: 1px;
-  width: 220px;
-  top: 55%;
-  right: 60px;
-}
-
-.thin-v {
-  width: 1px;
-  height: 180px;
-  top: 30%;
-  right: 140px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 1024px) {
@@ -303,15 +145,7 @@ nav a:hover::after {
     width: 100%;
   }
 
-  .overlay-square,
-  .geo-line,
-  .geo-accent-1,
-  .geo-accent-2,
-  .accent-blue,
-  .accent-yellow,
-  .wireframe,
-  .crosshair,
-  .thin-line {
+  .accent {
     display: none;
   }
 
@@ -353,46 +187,38 @@ nav a:hover::after {
 .hero-left .highlight {
   color: #FF2D2D;
 }
+
+/* Accent squares - positioned near hero image */
 .accent {
-  opacity: 0.7;
-}
-.blue {
   position: absolute;
-  width: 70px;
-  height: 70px;
-  background: #0066FF;
-
-  top: 25%;        /* pehle zyada upar tha */
-  right: 18%;      /* image ke paas lao */
-}
-.red {
-  width: 120px;
-  height: 120px;
-  background: #FF2D2D;
-
-  top: 40%;
-  right: 12%;
-
-  opacity: 0.85;
-}
-.yellow {
-  width: 70px;
-  height: 70px;
-  background: #FFD600;
-
-  bottom: 20%;
-  right: 15%;
-}
-.line,
-.wireframe,
-.crosshair {
-  opacity: 0.08;
-}
-.accent {
   z-index: 2;
 }
 
-.hero-right img {
-  position: relative;
-  z-index: 1;
+.accent.blue {
+  width: 60px;
+  height: 60px;
+  background: #0066FF;
+  top: 22%;
+  right: 16%;
+}
+
+.accent.red {
+  width: 110px;
+  height: 110px;
+  background: #FF2D2D;
+  top: 42%;
+  right: 10%;
+  opacity: 0.85;
+}
+
+.accent.yellow {
+  width: 60px;
+  height: 60px;
+  background: #FFD600;
+  bottom: 18%;
+  right: 14%;
+}
+
+.wireframe, .crosshair, .line {
+  opacity: 0.08;
 }
