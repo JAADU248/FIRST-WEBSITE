@@ -205,6 +205,65 @@ nav a:hover::after {
   z-index: 4;
 }
 
+/* Subtle tech overlays - wireframes, crosshairs, thin lines */
+.wireframe {
+  position: absolute;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: transparent;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.wire-1 {
+  width: 160px;
+  height: 110px;
+  top: 38%;
+  right: 110px;
+  transform: translateY(-50%);
+}
+
+.wire-2 {
+  width: 100px;
+  height: 80px;
+  top: 60%;
+  right: 160px;
+  transform: translateY(-50%);
+}
+
+.crosshair {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  z-index: 5;
+  pointer-events: none;
+}
+.crosshair::before,
+.crosshair::after {
+  content: '';
+  position: absolute;
+  background: rgba(255,255,255,0.15);
+}
+.crosshair::before {
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+}
+.crosshair::after {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 2px;
+  width: 100%;
+}
+.cross-1 { top: 20%; right: 200px; }
+.cross-2 { top: 45%; right: 140px; }
+
+.thin-line { position: absolute; background: rgba(255,255,255,0.12); z-index: 3; pointer-events: none; }
+.thin-h { height: 1px; width: 220px; top: 55%; right: 60px; }
+.thin-v { width: 1px; height: 180px; top: 30%; right: 140px; }
+
 @media (max-width: 1024px) {
   .hero-left {
     width: 45%;
@@ -230,7 +289,12 @@ nav a:hover::after {
   .overlay-square,
   .geo-line,
   .geo-accent-1,
-  .geo-accent-2 {
+  .geo-accent-2,
+  .accent-blue,
+  .accent-yellow,
+  .wireframe,
+  .crosshair,
+  .thin-line {
     display: none;
   }
 
