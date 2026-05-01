@@ -66,3 +66,31 @@ body {
   text-decoration: none;
   font-size: 14px;
 }
+.hero {
+  height: 100vh;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+}
+
+.hero-left {
+  width: 50%;
+}
+
+.hero-right {
+  width: 50%;
+}
+.highlight {
+  color: #FF2D2D;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.hero-left h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 90px;
+  line-height: 1;
+}
