@@ -1,87 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
   overflow-x: hidden;
- }
-
-/* Navbar */
-        nav {
-          background: black;
-            padding: 15px;
-              display: flex;
-                justify-content: center;
-                }
-
-                nav a {
-                  color: white;
-                    text-decoration: none;
-                      margin: 0 25px;
-                        font-size: 16px;
-                          position: relative;
-                          }
-                           /* Hover underline animation */
-                          nav a::after {
-                            content: "";
-                              position: absolute;
-                                width: 0;
-                                  height: 2px;
-                                    background: white;
-                                      left: 0;
-                                        bottom: -5px;
-                                          transition: 0.3s;
-                                          }
-
-                                          nav a:hover::after {
-                                            width: 100%;
-                                            }
-.hero {
-  height: 100vh;
   background: #000;
   color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 0 20px;
+  gap: 24px;
+  padding: 24px 30px;
+  background: #000;
 }
 
-.hero-content h1 {
-  font-size: 80px;
-  letter-spacing: 4px;
-  margin: 0;
-}
-
-.hero-content p {
-  margin-top: 15px;
-  font-size: 16px;
-  color: #ccc;
-}
-
-.cta-btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 30px;
-  background: red;
-  color: white;
+nav a {
+  color: #fff;
   text-decoration: none;
   font-size: 14px;
+  letter-spacing: 0.03em;
+  position: relative;
 }
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.25s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
 .hero {
   display: flex;
-  height: 100vh;
-  background: #000;
-  color: #fff;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 .hero-left {
   width: 40%;
-  padding: 100px 80px;
+  padding: 100px 0;
+}
+
+.tag {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.highlight {
+  color: #FF2D2D;
+}
+
+.desc {
+  max-width: 540px;
+  margin: 30px 0 0;
+  color: #d4d4d4;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 34px;
+  border-radius: 999px;
+  background: #FF2D2D;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .hero-right {
-  flex: 1;
-  height: 100%;
-
+  width: 58%;
+  min-height: 100%;
   background-image: url("assets/iamges/black-building.png");
-  background-size: contain;
   background-repeat: no-repeat;
   background-position: right center;
+  background-size: contain;
+}
+
+@media (max-width: 1024px) {
+  .hero-left {
+    width: 45%;
+  }
+
+  .hero-right {
+    width: 52%;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .hero-left {
+    padding: 60px 0;
+  }
+
+  .hero-right {
+    min-height: 360px;
+    background-position: center center;
+  }
+}
+
+@media (max-width: 560px) {
+  nav {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 18px 18px;
+  }
+
+  .desc {
+    font-size: 0.95rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 240px;
+  }
 }
