@@ -145,3 +145,16 @@ body {
   height: 100%;
   object-fit: cover;
 }
+.hero-right {
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-right img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
