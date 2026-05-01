@@ -74,19 +74,18 @@ body {
 
 /* LEFT */
 .hero-left {
-  width: 50%;
+  width: 40%;
   padding: 100px 80px;
 }
 
 /* RIGHT */
  .hero-right {
-   width: auto;
-   height: 100vh;
-   display: flex;
-   justify-content: flex-end;
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
 }
- .hero-right img {
+.hero-right img {
   height: 100%;
   width: auto;
- }
- 
+}
