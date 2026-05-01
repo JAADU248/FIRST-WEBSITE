@@ -79,15 +79,14 @@ body {
 }
 
 /* RIGHT */
-.hero-right {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
+ .hero-right {
+   width: auto;
+   height: 100vh;
+   display: flex;
+   justify-content: flex-end;
 }
-
-.hero-right img {
+ .hero-right img {
   height: 100%;
   width: auto;
-  display: block;
-  margin-left: auto;
-}
+ }
+ 
