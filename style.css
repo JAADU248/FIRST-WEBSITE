@@ -105,7 +105,8 @@ nav a:hover::after {
 
 .hero-right {
   width: 58%;
-  min-height: 100%;
+  min-height: 100vh;
+  background-color: #111;
   background-image: url("assets/iamges/black-building.png");
   background-repeat: no-repeat;
   background-position: right center;
