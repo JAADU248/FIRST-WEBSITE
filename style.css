@@ -86,8 +86,8 @@ body {
 }
 
 .hero-right img {
-  width: 110%;
   height: 100%;
-  object-fit: cover;
-  object-position: right center;
+  width: auto;
+  display: block;
+  margin-left: auto;
 }
