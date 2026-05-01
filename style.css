@@ -94,3 +94,39 @@ body {
   font-size: 90px;
   line-height: 1;
 }
+/* Tag (TECHNOLOGY SOLUTIONS) */
+.tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #FF2D2D;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.desc {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+/* CTA Button (Brutal style) */
+.cta-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 35px;
+  background: #FF2D2D;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+/* Hover */
+.cta-btn:hover {
+  background: transparent;
+  border: 1px solid #FF2D2D;
+  color: #FF2D2D;
+}
