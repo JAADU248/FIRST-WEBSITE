@@ -73,22 +73,19 @@ body {
   height: 100vh;
   background: #000;
   color: #fff;
-  overflow: hidden;
 }
 
-/* LEFT */
 .hero-left {
   width: 40%;
   padding: 100px 80px;
 }
 
-/* RIGHT */
- .hero-right {
+.hero-right {
   flex: 1;
-  height: 100vh;
-  display: flex;
-  justify-content: flex-end;
-}
-.hero-right img {
-  border: 5px solid red;
+  height: 100%;
+
+  background-image: url("assets/images/black-building.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
 }
