@@ -56,7 +56,7 @@ nav a:hover::after {
 }
 
 .hero-left {
-  width: 40%;
+  flex: 0 0 40%;
   padding: 100px 0;
 }
 
@@ -104,13 +104,21 @@ nav a:hover::after {
 }
 
 .hero-right {
-  width: 58%;
+  flex: 1;
   min-height: 100vh;
-  background-color: #111;
-  background-image: url("assets/iamges/black-building.png");
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 30px;
+  min-width: 0;
+}
+
+.hero-right img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 @media (max-width: 1024px) {
