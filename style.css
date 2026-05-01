@@ -356,3 +356,43 @@ nav a:hover::after {
 .accent {
   opacity: 0.7;
 }
+.blue {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: #0066FF;
+
+  top: 25%;        /* pehle zyada upar tha */
+  right: 18%;      /* image ke paas lao */
+}
+.red {
+  width: 120px;
+  height: 120px;
+  background: #FF2D2D;
+
+  top: 40%;
+  right: 12%;
+
+  opacity: 0.85;
+}
+.yellow {
+  width: 70px;
+  height: 70px;
+  background: #FFD600;
+
+  bottom: 20%;
+  right: 15%;
+}
+.line,
+.wireframe,
+.crosshair {
+  opacity: 0.08;
+}
+.accent {
+  z-index: 2;
+}
+
+.hero-right img {
+  position: relative;
+  z-index: 1;
+}
