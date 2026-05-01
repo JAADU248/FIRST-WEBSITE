@@ -267,3 +267,8 @@ nav a:hover::after {
 .hero-left .highlight {
   color: #FF2D2D;
 }
+
+<section class="hero">
+  <div class="accent-blue"></div>
+  <div class="accent-yellow"></div>
+</section>
