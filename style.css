@@ -45,6 +45,7 @@ nav a:hover::after {
 }
 
 .hero {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,6 +54,7 @@ nav a:hover::after {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 30px;
+  overflow: hidden;
 }
 
 .hero-left {
@@ -121,6 +123,61 @@ nav a:hover::after {
   object-fit: contain;
 }
 
+/* Geometric overlay elements */
+.overlay-square {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  width: 120px;
+  height: 120px;
+  background: #FF2D2D;
+  opacity: 0.85;
+  z-index: 5;
+}
+
+.geo-line {
+  position: absolute;
+  background: #FF2D2D;
+  opacity: 0.15;
+  z-index: 3;
+}
+
+.geo-line-h {
+  bottom: 220px;
+  right: 0;
+  width: 280px;
+  height: 2px;
+}
+
+.geo-line-v {
+  bottom: 60px;
+  right: 200px;
+  width: 2px;
+  height: 200px;
+}
+
+.geo-accent-1 {
+  position: absolute;
+  bottom: 180px;
+  right: 240px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #FF2D2D;
+  opacity: 0.2;
+  z-index: 4;
+}
+
+.geo-accent-2 {
+  position: absolute;
+  bottom: 120px;
+  right: 320px;
+  width: 20px;
+  height: 20px;
+  background: #FF2D2D;
+  opacity: 0.12;
+  z-index: 4;
+}
+
 @media (max-width: 1024px) {
   .hero-left {
     width: 45%;
@@ -141,6 +198,13 @@ nav a:hover::after {
   .hero-left,
   .hero-right {
     width: 100%;
+  }
+
+  .overlay-square,
+  .geo-line,
+  .geo-accent-1,
+  .geo-accent-2 {
+    display: none;
   }
 
   .hero-left {
