@@ -158,3 +158,20 @@ body {
   width: auto;
   object-fit: cover;
 }
+.hero {
+  position: relative;
+}
+
+.hero-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 45%;
+  height: 100%;
+}
+
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
