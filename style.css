@@ -13,12 +13,12 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+/* NAV */
 nav {
   display: flex;
   justify-content: center;
   gap: 24px;
   padding: 24px 30px;
-  background: #000;
 }
 
 nav a {
@@ -37,47 +37,42 @@ nav a::after {
   width: 0;
   height: 2px;
   background: #fff;
-  transition: width 0.25s ease;
+  transition: 0.25s;
 }
 
 nav a:hover::after {
   width: 100%;
 }
 
+/* HERO */
 .hero {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
-  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 30px;
   overflow: hidden;
 }
 
+/* LEFT */
 .hero-left {
   flex: 0 0 40%;
   padding: 100px 0;
 }
 
 .tag {
-  display: inline-block;
-  margin-bottom: 24px;
   font-size: 12px;
-  font-weight: 600;
   letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: #fff;
+  margin-bottom: 20px;
 }
 
-.hero h1 {
-  margin: 0;
+.hero-left h1 {
   font-family: 'Anton', sans-serif;
   font-size: clamp(3rem, 6vw, 5.5rem);
   line-height: 0.95;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -86,33 +81,26 @@ nav a:hover::after {
 }
 
 .desc {
-  max-width: 540px;
-  margin: 30px 0 0;
-  color: #fff;
-  font-size: 1rem;
-  line-height: 1.8;
+  margin-top: 25px;
+  line-height: 1.7;
+  max-width: 500px;
 }
 
 .cta-btn {
-  display: inline-block;
   margin-top: 30px;
   padding: 14px 34px;
-  border-radius: 999px;
   background: #FF2D2D;
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  border-radius: 999px;
 }
 
+/* RIGHT */
 .hero-right {
   flex: 1;
-  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
-  padding-left: 30px;
-  min-width: 0;
+  align-items: center;
 }
 
 .hero-right img {
@@ -123,120 +111,56 @@ nav a:hover::after {
   z-index: 1;
 }
 
-@media (max-width: 1024px) {
-  .hero-left {
-    width: 45%;
-  }
-
-  .hero-right {
-    width: 52%;
-  }
-}
-
-@media (max-width: 860px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 0 24px;
-  }
-
-  .hero-left,
-  .hero-right {
-    width: 100%;
-  }
-
-  .accent {
-    display: none;
-  }
-
-  .hero-left {
-    padding: 60px 0;
-  }
-
-  .hero-right {
-    min-height: 360px;
-    background-position: center center;
-  }
-}
-
-@media (max-width: 560px) {
-  nav {
-    flex-wrap: wrap;
-    gap: 16px;
-    padding: 18px 18px;
-  }
-
-  .desc {
-    font-size: 0.95rem;
-  }
-
-  .cta-btn {
-    width: 100%;
-    max-width: 240px;
-  }
-}
-
-.hero-left h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: 90px;
-  line-height: 0.95;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.hero-left .highlight {
-  color: #FF2D2D;
-}
-
-/* Accent squares - positioned near hero image */
-.accent {
-  position: absolute;
-  z-index: 2;
-}
-
-/* Clean accent system - structured visual cluster around hero image */
+/* ========================= */
+/* ACCENT SYSTEM (FIXED) */
+/* ========================= */
 
 .accent {
   position: absolute;
   z-index: 2;
 }
 
-/* Accent hierarchy: small, medium, large with visual balance */
+/* BLUE */
 .accent.blue {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   background: #0066FF;
-  top: 18%;
-  right: 12%;
+  top: 22%;
+  right: 14%;
   opacity: 0.7;
 }
 
+/* RED */
 .accent.red {
-  width: 100px;
-  height: 100px;
+  width: 95px;
+  height: 95px;
   background: #FF2D2D;
-  top: 48%;
-  right: 8%;
-  opacity: 0.8;
+  top: 42%;
+  right: 10%;
+  opacity: 0.85;
 }
 
+/* YELLOW */
 .accent.yellow {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   background: #FFD600;
-  top: 72%;
-  right: 13%;
+  bottom: 18%;
+  right: 12%;
   opacity: 0.75;
 }
 
-/* Tech overlays - subtle wireframe, crosshair, line */
+/* ========================= */
+/* TECH OVERLAY (REFINED) */
+/* ========================= */
+
 .overlay-wire {
   position: absolute;
-  width: 140px;
-  height: 100px;
-  border: 1px solid rgba(255,255,255,0.08);
+  width: 120px;
+  height: 90px;
+  border: 1px solid rgba(255,255,255,0.06);
   top: 35%;
-  right: 6%;
+  right: 7%;
   z-index: 1;
 }
 
@@ -244,7 +168,7 @@ nav a:hover::after {
   position: absolute;
   width: 30px;
   height: 30px;
-  top: 27%;
+  top: 26%;
   right: 18%;
   z-index: 1;
 }
@@ -260,30 +184,40 @@ nav a:hover::after {
   width: 100%;
   height: 1px;
   top: 50%;
-  left: 0;
-  transform: translateY(-50%);
 }
 
 .overlay-cross::after {
   width: 1px;
   height: 100%;
   left: 50%;
-  top: 0;
-  transform: translateX(-50%);
 }
 
 .overlay-line {
   position: absolute;
-  width: 180px;
+  width: 150px;
   height: 1px;
   background: rgba(255,255,255,0.05);
   top: 55%;
-  right: 4%;
+  right: 5%;
   z-index: 1;
 }
 
+/* MOBILE */
 @media (max-width: 860px) {
-  .accent, .overlay-wire, .overlay-cross, .overlay-line {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .accent,
+  .overlay-wire,
+  .overlay-cross,
+  .overlay-line {
     display: none;
   }
 }
