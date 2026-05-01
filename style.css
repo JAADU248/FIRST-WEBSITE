@@ -34,3 +34,23 @@ body {
                                           nav a:hover::after {
                                             width: 100%;
                                             }
+.hero {
+  height: 90vh;
+  background: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #ccc;
+}
