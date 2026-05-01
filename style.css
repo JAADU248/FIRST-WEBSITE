@@ -194,31 +194,96 @@ nav a:hover::after {
   z-index: 2;
 }
 
+/* Clean accent system - structured visual cluster around hero image */
+
+.accent {
+  position: absolute;
+  z-index: 2;
+}
+
+/* Accent hierarchy: small, medium, large with visual balance */
 .accent.blue {
   width: 60px;
   height: 60px;
   background: #0066FF;
-  top: 22%;
-  right: 16%;
+  top: 18%;
+  right: 12%;
+  opacity: 0.7;
 }
 
 .accent.red {
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   background: #FF2D2D;
-  top: 42%;
-  right: 10%;
-  opacity: 0.85;
+  top: 48%;
+  right: 8%;
+  opacity: 0.8;
 }
 
 .accent.yellow {
   width: 60px;
   height: 60px;
   background: #FFD600;
-  bottom: 18%;
-  right: 14%;
+  top: 72%;
+  right: 13%;
+  opacity: 0.75;
 }
 
-.wireframe, .crosshair, .line {
-  opacity: 0.08;
+/* Tech overlays - subtle wireframe, crosshair, line */
+.overlay-wire {
+  position: absolute;
+  width: 140px;
+  height: 100px;
+  border: 1px solid rgba(255,255,255,0.08);
+  top: 35%;
+  right: 6%;
+  z-index: 1;
+}
+
+.overlay-cross {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 27%;
+  right: 18%;
+  z-index: 1;
+}
+
+.overlay-cross::before,
+.overlay-cross::after {
+  content: '';
+  position: absolute;
+  background: rgba(255,255,255,0.06);
+}
+
+.overlay-cross::before {
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.overlay-cross::after {
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.overlay-line {
+  position: absolute;
+  width: 180px;
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+  top: 55%;
+  right: 4%;
+  z-index: 1;
+}
+
+@media (max-width: 860px) {
+  .accent, .overlay-wire, .overlay-cross, .overlay-line {
+    display: none;
+  }
 }
