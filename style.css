@@ -127,7 +127,7 @@ nav a:hover::after {
 .overlay-square {
   position: absolute;
   top: 50%;
-  right: 120px;
+  right: 100px;
   transform: translateY(-50%);
   width: 120px;
   height: 120px;
@@ -144,25 +144,27 @@ nav a:hover::after {
 }
 
 .geo-line-h {
-  bottom: auto;
-  top: 45%;
-  right: 0;
-  width: 280px;
+  top: 55%;
+  right: 40px;
+  width: 200px;
   height: 2px;
+  background: #FF2D2D;
+  opacity: 0.15;
 }
 
 .geo-line-v {
-  bottom: auto;
-  top: 20%;
-  right: 200px;
+  top: 65px;
+  right: 160px;
   width: 2px;
-  height: 300px;
+  height: 280px;
+  background: #FF2D2D;
+  opacity: 0.15;
 }
 
 .geo-accent-1 {
   position: absolute;
-  top: 35%;
-  right: 300px;
+  top: 70%;
+  right: 280px;
   width: 40px;
   height: 40px;
   border: 2px solid #FF2D2D;
@@ -172,8 +174,8 @@ nav a:hover::after {
 
 .geo-accent-2 {
   position: absolute;
-  top: 70%;
-  right: 150px;
+  top: 45%;
+  right: 140px;
   width: 20px;
   height: 20px;
   background: #FF2D2D;
@@ -184,7 +186,7 @@ nav a:hover::after {
 .accent-blue {
   position: absolute;
   top: 80px;
-  right: 200px;
+  right: 220px;
   width: 80px;
   height: 80px;
   background: #0066FF;
@@ -194,8 +196,8 @@ nav a:hover::after {
 
 .accent-yellow {
   position: absolute;
-  top: 60%;
-  right: 80px;
+  top: 65%;
+  right: 180px;
   width: 60px;
   height: 60px;
   background: #FFD600;
@@ -270,8 +272,6 @@ nav a:hover::after {
 .hero-left .highlight {
   color: #FF2D2D;
 }
-
-<section class="hero">
-  <div class="accent-blue"></div>
-  <div class="accent-yellow"></div>
-</section>
+.accent {
+  opacity: 0.7;
+}
