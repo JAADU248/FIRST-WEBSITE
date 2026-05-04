@@ -56,8 +56,6 @@ anime({
 });
 const hero = document.querySelector(".hero");
 
-const hero = document.querySelector(".hero");
-
 let mouseX = 0;
 let mouseY = 0;
 
