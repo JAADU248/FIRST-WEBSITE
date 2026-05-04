@@ -3,21 +3,22 @@ const hero = document.querySelector(".hero");
 let mouseX = 0;
 let mouseY = 0;
 
-/* TEXT REVEAL ON PAGE LOAD */
-anime({
-  targets: '.hero-title span',
-  opacity: [0, 1],
-  translateY: [40, 0],
-  delay: anime.stagger(100),
-  duration: 800,
-  easing: 'easeOutElastic(1, .6)'
-});
-
 /* lower sensitivity */
 hero.addEventListener("mousemove", (e) => {
   mouseX = (window.innerWidth / 2 - e.clientX) / 80;
   mouseY = (window.innerHeight / 2 - e.clientY) / 80;
 });
+
+/* TEXT REVEAL ON PAGE LOAD */
+document.addEventListener('DOMContentLoaded', function() {
+  anime({
+    targets: '.hero-title span',
+    opacity: [0.5, 1],
+    translateY: [-20, 0],
+    delay: anime.stagger(80),
+    duration: 600,
+    easing: 'easeOutQuad'
+  });
 
 /* smooth loop */
 anime({
@@ -62,30 +63,29 @@ anime({
 });
 
 /* MOBILE MENU TOGGLE */
-document.addEventListener('DOMContentLoaded', function() {
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', function() {
-      navToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
-    });
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', function() {
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
 
-    /* Close menu when a link is clicked */
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function() {
-        navToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-      });
+  /* Close menu when a link is clicked */
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('active');
     });
+  });
 
-    /* Close menu when clicking outside */
-    document.addEventListener('click', function(event) {
-      if (!event.target.closest('nav')) {
-        navToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-      }
-    });
-  }
+  /* Close menu when clicking outside */
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('nav')) {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+    }
+  });
+}
 });

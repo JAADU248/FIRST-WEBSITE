@@ -107,8 +107,8 @@
 
 .hero-title span {
   display: inline-block;
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .highlight {
