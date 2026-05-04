@@ -59,7 +59,7 @@
 /* TITLE */
 .hero-left h1 {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-size: clamp(4rem, 7.5vw, 7rem);
   line-height: 0.95;
   text-transform: uppercase;
 }
@@ -86,7 +86,7 @@
   width: fit-content;
   padding: 14px 36px;
   background: #FF2D2D;
-  border-radius: 999px;
+  border-radius: 0;
   text-decoration: none;
   color: #fff;
   transition: 0.3s;
@@ -199,4 +199,24 @@
   width: 1px;
   height: 40px;
   background: rgba(255,255,255,0.2);
+}
+/* PURE BRUTAL PANEL */
+.hero-left {
+  position: relative;
+  z-index: 5;
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+
+  padding: 60px 40px;
+  background: #1a0000; /* solid dark red */
+  border-radius: 0; /* remove round */
+  border: none;
+}
+
+/* REMOVE ALL OLD EFFECTS */
+.hero-left::before {
+  display: none;
 }
