@@ -9,6 +9,8 @@
   width: 100%;
   padding: 0 80px;
   overflow: hidden;
+   position: relative;
+  isolation: isolate;
 }
 
 /* GRID */
@@ -141,17 +143,20 @@
 /* RIGHT SIDE */
 .hero-right {
   position: relative;
-  z-index: 5;
+  z-index: 2;
   flex: 0 0 55%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  overflow: visible;
 }
 
 .hero-right img {
-  width: 100%;
+  position: relative;
+  z-index: 2;
+  width: 130%;
   height: auto;
-  max-width: 600px;
+  max-width: none;
   filter: drop-shadow(0 40px 80px rgba(0,0,0,0.7));
 }
 
@@ -320,6 +325,6 @@
 .overlay-cross,
 .overlay-line {
   position: absolute;
-  z-index: 6; /* image se upar */
+  z-index: 10 !important; /* FORCE TOP */
   pointer-events: none;
 }
