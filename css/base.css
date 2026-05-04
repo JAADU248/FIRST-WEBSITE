@@ -43,3 +43,7 @@ nav a::after {
 nav a:hover::after {
   width: 100%;
 }
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+}
