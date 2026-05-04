@@ -56,31 +56,30 @@ anime({
 });
 const hero = document.querySelector(".hero");
 
+const hero = document.querySelector(".hero");
+
+let mouseX = 0;
+let mouseY = 0;
+
 hero.addEventListener("mousemove", (e) => {
-  const x = (window.innerWidth / 2 - e.clientX) / 30;
-  const y = (window.innerHeight / 2 - e.clientY) / 30;
+  mouseX = (window.innerWidth / 2 - e.clientX) / 25;
+  mouseY = (window.innerHeight / 2 - e.clientY) / 25;
+});
 
-  anime({
-    targets: '.hero-left',
-    translateX: x,
-    translateY: y,
-    duration: 300,
-    easing: 'easeOutQuad'
-  });
+/* smooth loop (no spam animation) */
+anime({
+  targets: {},
+  update: function () {
+    document.querySelector('.hero-left').style.transform =
+      `translate(${mouseX}px, ${mouseY}px)`;
 
-  anime({
-    targets: '.hero-right img',
-    translateX: -x,
-    translateY: -y,
-    duration: 300,
-    easing: 'easeOutQuad'
-  });
+    document.querySelector('.hero-right img').style.transform =
+      `translate(${-mouseX}px, ${-mouseY}px)`;
 
-  anime({
-    targets: '.accent',
-    translateX: x * 2,
-    translateY: y * 2,
-    duration: 300,
-    easing: 'easeOutQuad'
-  });
+    document.querySelectorAll('.accent').forEach(el => {
+      el.style.transform =
+        `translate(${mouseX * 2}px, ${mouseY * 2}px)`;
+    });
+  },
+  duration: Infinity
 });
