@@ -16,7 +16,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75); /* thoda strong kiya */
   z-index: 1;
 }
 
@@ -27,18 +27,21 @@
   max-width: 500px;
 }
 
+/* HEADING */
 .highlight-content h2 {
   font-family: 'Anton', sans-serif;
-  font-size: 48px;
+  font-size: 52px; /* thoda bada */
   text-transform: uppercase;
 }
 
+/* TEXT */
 .highlight-content p {
   margin: 20px 0;
   line-height: 1.7;
   opacity: 0.8;
 }
 
+/* LINK */
 .highlight-content a {
   display: inline-block;
   margin-top: 10px;
@@ -57,13 +60,47 @@
 .computer-highlight a { border-color: #0066FF; }
 .solar-highlight a { border-color: #FFD600; }
 
+/* BACKGROUNDS */
+.cctv-highlight {
+  background: url("../assets/images/cctv-bg.png") center/cover no-repeat;
+}
+
+.computer-highlight {
+  background: url("../assets/images/computer-bg.png") center/cover no-repeat;
+}
+
+.solar-highlight {
+  background: url("../assets/images/solar-bg.png") center/cover no-repeat;
+}
+
 /* MOBILE */
 @media (max-width: 860px) {
   .highlight-section {
     padding: 60px 20px;
+    text-align: center;
   }
 
   .highlight-content h2 {
     font-size: 36px;
   }
+}
+.about-section {
+  padding: 100px 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-content {
+  max-width: 600px;
+}
+
+.about-content h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 48px;
+}
+
+.about-content p {
+  margin-top: 20px;
+  line-height: 1.7;
+  opacity: 0.8;
 }
