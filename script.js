@@ -3,6 +3,16 @@ const hero = document.querySelector(".hero");
 let mouseX = 0;
 let mouseY = 0;
 
+/* TEXT REVEAL ON PAGE LOAD */
+anime({
+  targets: '.hero-title span',
+  opacity: [0, 1],
+  translateY: [40, 0],
+  delay: anime.stagger(100),
+  duration: 800,
+  easing: 'easeOutElastic(1, .6)'
+});
+
 /* lower sensitivity */
 hero.addEventListener("mousemove", (e) => {
   mouseX = (window.innerWidth / 2 - e.clientX) / 80;
