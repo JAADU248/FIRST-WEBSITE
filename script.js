@@ -40,3 +40,13 @@ anime({
   loop: true,
   easing: 'easeInOutSine'
 });
+
+/* SCROLL INDICATOR FLOAT */
+anime({
+  targets: '.scroll-indicator',
+  translateY: [-10, 10],
+  duration: 3000,
+  direction: 'alternate',
+  loop: true,
+  easing: 'easeInOutSine'
+});
