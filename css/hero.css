@@ -220,3 +220,10 @@ nav {
   z-index: 1;
   pointer-events: none;
 }
+/* initial hidden state */
+.desc,
+.cta-btn,
+.hero-right img,
+.accent {
+  opacity: 0;
+}
