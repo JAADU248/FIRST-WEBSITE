@@ -252,3 +252,10 @@ nav a:hover::after {
 .service.red { border-color: #FF2D2D; }
 .service.blue { border-color: #0066FF; }
 .service.yellow { border-color: #FFD600; }
+.services-preview {
+  display: flex;
+  gap: 20px;
+  padding: 80px 30px; /* increase spacing */
+  max-width: 1400px;
+  margin: 0 auto;
+}
