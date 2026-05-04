@@ -6,9 +6,10 @@
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 30px;
+  width: 100%;          /* ADD */
+  max-width: none;      /* REMOVE LIMIT */
+  margin: 0;            /* REMOVE CENTER BOX */
+  padding: 0 60px;      /* thoda bada spacing */
   overflow: hidden;
 }
 
