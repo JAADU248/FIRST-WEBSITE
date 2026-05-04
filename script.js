@@ -1,91 +1,92 @@
-const hero = document.querySelector(".hero");
+/* SAFE INIT */
+document.addEventListener('DOMContentLoaded', () => {
 
-let mouseX = 0;
-let mouseY = 0;
+  const hero = document.querySelector(".hero");
+  const heroLeft = document.querySelector('.hero-left');
+  const heroImg = document.querySelector('.hero-right img');
+  const accents = document.querySelectorAll('.accent');
 
-/* lower sensitivity */
-hero.addEventListener("mousemove", (e) => {
-  mouseX = (window.innerWidth / 2 - e.clientX) / 80;
-  mouseY = (window.innerHeight / 2 - e.clientY) / 80;
-});
+  let mouseX = 0;
+  let mouseY = 0;
 
-/* TEXT REVEAL ON PAGE LOAD */
-document.addEventListener('DOMContentLoaded', function() {
+  /* ================= PARALLAX (LIGHT) ================= */
+  if (hero && heroLeft && heroImg) {
+    hero.addEventListener("mousemove", (e) => {
+      mouseX = (window.innerWidth / 2 - e.clientX) / 120;  // smoother
+      mouseY = (window.innerHeight / 2 - e.clientY) / 120;
+    });
+
+    anime({
+      targets: {},
+      update: () => {
+        heroLeft.style.transform =
+          `translate(${mouseX * 0.4}px, ${mouseY * 0.4}px)`;
+
+        heroImg.style.transform =
+          `translate(${-mouseX * 0.6}px, ${-mouseY * 0.6}px)`;
+
+        accents.forEach(el => {
+          el.style.transform =
+            `translate(${mouseX}px, ${mouseY}px)`;
+        });
+      },
+      duration: Infinity,
+      easing: 'linear'
+    });
+  }
+
+  /* ================= TEXT REVEAL ================= */
   anime({
     targets: '.hero-title span',
-    opacity: [0.5, 1],
-    translateY: [-20, 0],
+    opacity: [0, 1],
+    translateY: [20, 0],
     delay: anime.stagger(80),
     duration: 600,
     easing: 'easeOutQuad'
   });
 
-/* smooth loop */
-anime({
-  targets: {},
-  update: function () {
+  /* ================= SCROLL INDICATOR ================= */
+  anime({
+    targets: '.scroll-indicator span',
+    opacity: [0.3, 1],
+    delay: anime.stagger(300),
+    direction: 'alternate',
+    loop: true,
+    easing: 'easeInOutSine'
+  });
 
-    /* very subtle text movement */
-    document.querySelector('.hero-left').style.transform =
-      `translate(${mouseX * 0.5}px, ${mouseY * 0.5}px)`;
+  anime({
+    targets: '.scroll-indicator',
+    translateY: [-8, 8],
+    duration: 2500,
+    direction: 'alternate',
+    loop: true,
+    easing: 'easeInOutSine'
+  });
 
-    /* image slightly opposite */
-    document.querySelector('.hero-right img').style.transform =
-      `translate(${-mouseX * 0.8}px, ${-mouseY * 0.8}px)`;
+  /* ================= MOBILE NAV ================= */
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
-    /* accents slightly more */
-    document.querySelectorAll('.accent').forEach(el => {
-      el.style.transform =
-        `translate(${mouseX * 1.2}px, ${mouseY * 1.2}px)`;
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
     });
 
-  },
-  duration: Infinity,
-  easing: 'linear'
-});
-anime({
-  targets: '.scroll-indicator span',
-  opacity: [0.2, 1],
-  delay: anime.stagger(300),
-  direction: 'alternate',
-  loop: true,
-  easing: 'easeInOutSine'
-});
-
-/* SCROLL INDICATOR FLOAT */
-anime({
-  targets: '.scroll-indicator',
-  translateY: [-10, 10],
-  duration: 3000,
-  direction: 'alternate',
-  loop: true,
-  easing: 'easeInOutSine'
-});
-
-/* MOBILE MENU TOGGLE */
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', function() {
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-
-  /* Close menu when a link is clicked */
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function() {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('active');
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
     });
-  });
 
-  /* Close menu when clicking outside */
-  document.addEventListener('click', function(event) {
-    if (!event.target.closest('nav')) {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('active');
-    }
-  });
-}
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('nav')) {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+  }
+
 });
