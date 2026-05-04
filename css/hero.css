@@ -11,6 +11,8 @@
 }
 
 .hero-left {
+  position: relative;
+  z-index: 3;
   flex: 0 0 40%;
   padding: 100px 0;
   display: flex;
@@ -68,7 +70,7 @@
 /* ACCENTS */
 .accent {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
 }
 
 .accent.blue {
@@ -93,6 +95,12 @@
   background: #FFD600;
   bottom: 16%;
   right: 11%;
+}
+.accent,
+.overlay-wire,
+.overlay-cross,
+.overlay-line {
+  pointer-events: none;
 }
 
 /* OVERLAYS */
