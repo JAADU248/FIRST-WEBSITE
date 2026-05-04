@@ -164,3 +164,19 @@
 .cta-btn:hover {
   transform: translateY(-3px);
 }
+/* ACCENT FLOAT */
+.accent {
+  transition: transform 0.4s ease;
+}
+
+.hero:hover .accent.blue {
+  transform: translateY(-8px);
+}
+
+.hero:hover .accent.red {
+  transform: translateY(-4px);
+}
+
+.hero:hover .accent.yellow {
+  transform: translateY(-6px);
+}
