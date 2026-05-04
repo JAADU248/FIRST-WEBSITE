@@ -50,3 +50,32 @@ anime({
   loop: true,
   easing: 'easeInOutSine'
 });
+
+/* MOBILE MENU TOGGLE */
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    /* Close menu when a link is clicked */
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    /* Close menu when clicking outside */
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('nav')) {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+  }
+});
