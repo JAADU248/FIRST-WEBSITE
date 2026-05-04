@@ -70,7 +70,8 @@
 /* ACCENTS */
 .accent {
   position: absolute;
-  z-index: 1;
+  z-index: 6;
+  pointer-events: none;
 }
 
 .accent.blue {
