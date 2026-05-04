@@ -56,16 +56,30 @@
   border-bottom: 2px solid;
   padding-bottom: 4px;
   transition: 0.25s;
+  position: relative;
 }
-
+/* ANIMATED LINE */
+.highlight-content a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
 /* SHORT LINE */
 .highlight-content a {
   width: fit-content;
 }
 
-/* HOVER EFFECT */
+/* HOVER */
+.highlight-content a:hover::after {
+  width: 100%;
+}
+
 .highlight-content a:hover {
-  transform: translateY(-2px);
   opacity: 0.8;
 }
 
