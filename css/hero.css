@@ -192,3 +192,25 @@
 .hero:hover .accent.yellow {
   transform: translateY(-6px);
 }
+/* HERO LAYERS FIX */
+
+/* TOP clickable content */
+nav {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-left,
+.hero-right {
+  position: relative;
+  z-index: 5;
+}
+
+/* Decorative elements (background only) */
+.accent,
+.overlay-wire,
+.overlay-cross,
+.overlay-line {
+  z-index: 1;
+  pointer-events: none;
+}
