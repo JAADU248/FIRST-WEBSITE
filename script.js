@@ -1,92 +1,91 @@
-/* SAFE INIT */
-document.addEventListener('DOMContentLoaded', () => {
+const hero = document.querySelector(".hero");
 
-  const hero = document.querySelector(".hero");
-  const heroLeft = document.querySelector('.hero-left');
-  const heroImg = document.querySelector('.hero-right img');
-  const accents = document.querySelectorAll('.accent');
+let mouseX = 0;
+let mouseY = 0;
 
-  let mouseX = 0;
-  let mouseY = 0;
+/* TEXT REVEAL ON PAGE LOAD */
+anime({
+  targets: '.hero-title span',
+  opacity: [0, 1],
+  translateY: [40, 0],
+  delay: anime.stagger(100),
+  duration: 800,
+  easing: 'easeOutElastic(1, .6)'
+});
 
-  /* ================= PARALLAX (LIGHT) ================= */
-  if (hero && heroLeft && heroImg) {
-    hero.addEventListener("mousemove", (e) => {
-      mouseX = (window.innerWidth / 2 - e.clientX) / 120;  // smoother
-      mouseY = (window.innerHeight / 2 - e.clientY) / 120;
+/* lower sensitivity */
+hero.addEventListener("mousemove", (e) => {
+  mouseX = (window.innerWidth / 2 - e.clientX) / 80;
+  mouseY = (window.innerHeight / 2 - e.clientY) / 80;
+});
+
+/* smooth loop */
+anime({
+  targets: {},
+  update: function () {
+
+    /* very subtle text movement */
+    document.querySelector('.hero-left').style.transform =
+      `translate(${mouseX * 0.5}px, ${mouseY * 0.5}px)`;
+
+    /* image slightly opposite */
+    document.querySelector('.hero-right img').style.transform =
+      `translate(${-mouseX * 0.8}px, ${-mouseY * 0.8}px)`;
+
+    /* accents slightly more */
+    document.querySelectorAll('.accent').forEach(el => {
+      el.style.transform =
+        `translate(${mouseX * 1.2}px, ${mouseY * 1.2}px)`;
     });
 
-    anime({
-      targets: {},
-      update: () => {
-        heroLeft.style.transform =
-          `translate(${mouseX * 0.4}px, ${mouseY * 0.4}px)`;
+  },
+  duration: Infinity,
+  easing: 'linear'
+});
+anime({
+  targets: '.scroll-indicator span',
+  opacity: [0.2, 1],
+  delay: anime.stagger(300),
+  direction: 'alternate',
+  loop: true,
+  easing: 'easeInOutSine'
+});
 
-        heroImg.style.transform =
-          `translate(${-mouseX * 0.6}px, ${-mouseY * 0.6}px)`;
+/* SCROLL INDICATOR FLOAT */
+anime({
+  targets: '.scroll-indicator',
+  translateY: [-10, 10],
+  duration: 3000,
+  direction: 'alternate',
+  loop: true,
+  easing: 'easeInOutSine'
+});
 
-        accents.forEach(el => {
-          el.style.transform =
-            `translate(${mouseX}px, ${mouseY}px)`;
-        });
-      },
-      duration: Infinity,
-      easing: 'linear'
-    });
-  }
-
-  /* ================= TEXT REVEAL ================= */
-  anime({
-    targets: '.hero-title span',
-    opacity: [0, 1],
-    translateY: [20, 0],
-    delay: anime.stagger(80),
-    duration: 600,
-    easing: 'easeOutQuad'
-  });
-
-  /* ================= SCROLL INDICATOR ================= */
-  anime({
-    targets: '.scroll-indicator span',
-    opacity: [0.3, 1],
-    delay: anime.stagger(300),
-    direction: 'alternate',
-    loop: true,
-    easing: 'easeInOutSine'
-  });
-
-  anime({
-    targets: '.scroll-indicator',
-    translateY: [-8, 8],
-    duration: 2500,
-    direction: 'alternate',
-    loop: true,
-    easing: 'easeInOutSine'
-  });
-
-  /* ================= MOBILE NAV ================= */
+/* MOBILE MENU TOGGLE */
+document.addEventListener('DOMContentLoaded', function() {
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
 
   if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
+    navToggle.addEventListener('click', function() {
       navToggle.classList.toggle('active');
       navLinks.classList.toggle('active');
     });
 
+    /* Close menu when a link is clicked */
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', function() {
         navToggle.classList.remove('active');
         navLinks.classList.remove('active');
       });
     });
 
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('nav')) {
+    /* Close menu when clicking outside */
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('nav')) {
         navToggle.classList.remove('active');
         navLinks.classList.remove('active');
       }
     });
   }
-
 });
