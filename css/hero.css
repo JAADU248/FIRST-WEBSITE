@@ -157,3 +157,10 @@
     display: none;
   }
 }
+.cta-btn {
+  transition: 0.25s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+}
