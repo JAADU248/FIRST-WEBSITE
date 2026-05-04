@@ -1,40 +1,42 @@
-window.addEventListener("load", () => {
+const hero = document.querySelector(".hero");
 
-  anime.timeline({
-    easing: 'easeOutExpo'
-  })
+let mouseX = 0;
+let mouseY = 0;
 
-  /* TEXT */
-  .add({
-    targets: '.hero-title span',
-    translateY: [40, 0],
-    opacity: [0, 1],
-    delay: anime.stagger(120),
-    duration: 800
-  })
+/* lower sensitivity */
+hero.addEventListener("mousemove", (e) => {
+  mouseX = (window.innerWidth / 2 - e.clientX) / 80;
+  mouseY = (window.innerHeight / 2 - e.clientY) / 80;
+});
 
-  /* DESCRIPTION */
-  .add({
-    targets: '.desc',
-    opacity: [0, 1],
-    translateY: [20, 0],
-    duration: 600
-  }, '-=500')
+/* smooth loop */
+anime({
+  targets: {},
+  update: function () {
 
-  /* BUTTON */
-  .add({
-    targets: '.cta-btn',
-    scale: [0.8, 1],
-    opacity: [0, 1],
-    duration: 500
-  }, '-=400')
+    /* very subtle text movement */
+    document.querySelector('.hero-left').style.transform =
+      `translate(${mouseX * 0.5}px, ${mouseY * 0.5}px)`;
 
-  /* IMAGE */
-  .add({
-    targets: '.hero-right img',
-    opacity: [0, 1],
-    scale: [1.05, 1],
-    duration: 900
-  }, '-=700');
+    /* image slightly opposite */
+    document.querySelector('.hero-right img').style.transform =
+      `translate(${-mouseX * 0.8}px, ${-mouseY * 0.8}px)`;
 
+    /* accents slightly more */
+    document.querySelectorAll('.accent').forEach(el => {
+      el.style.transform =
+        `translate(${mouseX * 1.2}px, ${mouseY * 1.2}px)`;
+    });
+
+  },
+  duration: Infinity,
+  easing: 'linear'
+});
+anime({
+  targets: '.scroll-indicator span',
+  opacity: [0.2, 1],
+  delay: anime.stagger(300),
+  direction: 'alternate',
+  loop: true,
+  easing: 'easeInOutSine'
 });

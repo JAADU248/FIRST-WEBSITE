@@ -44,22 +44,10 @@
   flex-direction: column;
   justify-content: center;
   gap: 25px;
-  padding: 50px;
-
-  backdrop-filter: blur(12px);
-  background: rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 20px;
-}
-
-/* subtle glow */
-.hero-left::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  background: linear-gradient(120deg, rgba(255,45,45,0.15), transparent);
-  z-index: -1;
+  padding: 0;
+  background: none;
+  border: none;
+  backdrop-filter: none;
 }
 
 /* TAG */
@@ -188,4 +176,27 @@
   .overlay-line {
     display: none;
   }
+}
+/* SCROLL INDICATOR */
+.scroll-indicator {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-indicator span {
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+.scroll-indicator .line {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.2);
 }
