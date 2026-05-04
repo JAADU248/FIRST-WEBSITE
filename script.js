@@ -1,83 +1,40 @@
-anime.timeline({
-  easing: 'easeOutExpo'
-})
+window.addEventListener("load", () => {
 
-/* TEXT ENTRY */
-.add({
-  targets: '.hero-title span',
-  translateY: [60, 0],
-  opacity: [0, 1],
-  delay: anime.stagger(120),
-  duration: 800
-})
+  anime.timeline({
+    easing: 'easeOutExpo'
+  })
 
-/* DESCRIPTION */
-.add({
-  targets: '.desc',
-  opacity: [0, 1],
-  translateY: [20, 0],
-  duration: 600
-}, '-=500')
+  /* TEXT */
+  .add({
+    targets: '.hero-title span',
+    translateY: [40, 0],
+    opacity: [0, 1],
+    delay: anime.stagger(120),
+    duration: 800
+  })
 
-/* BUTTON */
-.add({
-  targets: '.cta-btn',
-  scale: [0.8, 1],
-  opacity: [0, 1],
-  duration: 500
-}, '-=400')
+  /* DESCRIPTION */
+  .add({
+    targets: '.desc',
+    opacity: [0, 1],
+    translateY: [20, 0],
+    duration: 600
+  }, '-=500')
 
-/* IMAGE */
-.add({
-  targets: '.hero-right img',
-  opacity: [0, 1],
-  scale: [1.1, 1],
-  duration: 1000
-}, '-=800')
+  /* BUTTON */
+  .add({
+    targets: '.cta-btn',
+    scale: [0.8, 1],
+    opacity: [0, 1],
+    duration: 500
+  }, '-=400')
 
-/* ACCENTS */
-.add({
-  targets: '.accent',
-  opacity: [0, 1],
-  scale: [0.5, 1],
-  delay: anime.stagger(200),
-  duration: 600
-}, '-=700');
+  /* IMAGE */
+  .add({
+    targets: '.hero-right img',
+    opacity: [0, 1],
+    scale: [1.05, 1],
+    duration: 900
+  }, '-=700');
 
-
-/* FLOAT LOOP (continuous motion) */
-anime({
-  targets: '.accent',
-  translateY: [-10, 10],
-  direction: 'alternate',
-  loop: true,
-  easing: 'easeInOutSine',
-  duration: 2000
-});
-const hero = document.querySelector(".hero");
-
-let mouseX = 0;
-let mouseY = 0;
-
-hero.addEventListener("mousemove", (e) => {
-  mouseX = (window.innerWidth / 2 - e.clientX) / 25;
-  mouseY = (window.innerHeight / 2 - e.clientY) / 25;
-});
-
-/* smooth loop (no spam animation) */
-anime({
-  targets: {},
-  update: function () {
-    document.querySelector('.hero-left').style.transform =
-      `translate(${mouseX}px, ${mouseY}px)`;
-
-    document.querySelector('.hero-right img').style.transform =
-      `translate(${-mouseX}px, ${-mouseY}px)`;
-
-    document.querySelectorAll('.accent').forEach(el => {
-      el.style.transform =
-        `translate(${mouseX * 2}px, ${mouseY * 2}px)`;
-    });
-  },
-  duration: Infinity
 });

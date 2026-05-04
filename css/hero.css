@@ -1,4 +1,4 @@
-/* ================= HERO ================= */
+/* ================= HERO FINAL ================= */
 
 .hero {
   position: relative;
@@ -6,45 +6,45 @@
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
-  width: 100%;          /* ADD */
-  max-width: none;      /* REMOVE LIMIT */
-  margin: 0;            /* REMOVE CENTER BOX */
-  padding: 0 60px;      /* thoda bada spacing */
+  width: 100%;
+  padding: 0 80px;
   overflow: hidden;
 }
 
-/* GRID + GLOW */
+/* GRID */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: 
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   z-index: 0;
 }
 
+/* RED GLOW */
 .hero::after {
   content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   background: radial-gradient(circle, rgba(255,45,45,0.25), transparent 70%);
-  top: 20%;
-  right: 10%;
+  top: 15%;
+  right: 5%;
   z-index: 0;
 }
 
-/* LEFT PANEL */
+/* LEFT SIDE */
 .hero-left {
   position: relative;
   z-index: 5;
-  flex: 0 0 40%;
-  padding: 60px;
+  flex: 0 0 45%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  gap: 25px;
+  padding: 50px;
 
   backdrop-filter: blur(12px);
   background: rgba(0,0,0,0.35);
@@ -52,20 +52,30 @@
   border-radius: 20px;
 }
 
+/* subtle glow */
 .hero-left::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 20px;
-  background: linear-gradient(
-    120deg,
-    rgba(255,45,45,0.15),
-    transparent
-  );
+  background: linear-gradient(120deg, rgba(255,45,45,0.15), transparent);
   z-index: -1;
 }
 
-/* TEXT */
+/* TAG */
+.tag {
+  font-size: 12px;
+  letter-spacing: 0.35em;
+}
+
+/* TITLE */
+.hero-left h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
 .hero-title span {
   display: inline-block;
   opacity: 0;
@@ -76,13 +86,17 @@
   color: #FF2D2D;
 }
 
+/* TEXT */
 .desc {
-  max-width: 500px;
+  max-width: 520px;
   line-height: 1.7;
+  opacity: 0.85;
 }
 
+/* BUTTON */
 .cta-btn {
-  padding: 14px 34px;
+  width: fit-content;
+  padding: 14px 36px;
   background: #FF2D2D;
   border-radius: 999px;
   text-decoration: none;
@@ -92,21 +106,23 @@
 
 .cta-btn:hover {
   transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255,45,45,0.4);
 }
 
-/* RIGHT IMAGE */
+/* RIGHT SIDE */
 .hero-right {
   position: relative;
   z-index: 5;
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .hero-right img {
   width: 120%;
   max-width: none;
-  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.6));
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.7));
 }
 
 /* ACCENTS */
@@ -117,28 +133,31 @@
   border-radius: 6px;
 }
 
+/* BLUE */
 .accent.blue {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   background: #0066FF;
-  top: 20%;
-  right: 13%;
+  top: 15%;
+  right: 10%;
 }
 
+/* RED */
 .accent.red {
-  width: 95px;
-  height: 95px;
+  width: 110px;
+  height: 110px;
   background: #FF2D2D;
-  top: 40%;
-  right: 9%;
+  top: 45%;
+  right: 8%;
 }
 
+/* YELLOW */
 .accent.yellow {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   background: #FFD600;
-  bottom: 16%;
-  right: 11%;
+  bottom: 12%;
+  right: 12%;
 }
 
 /* OVERLAYS */
@@ -154,6 +173,7 @@
 @media (max-width: 860px) {
   .hero {
     flex-direction: column;
+    padding: 40px 20px;
     text-align: center;
   }
 
