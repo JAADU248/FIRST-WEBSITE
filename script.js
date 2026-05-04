@@ -54,3 +54,33 @@ anime({
   easing: 'easeInOutSine',
   duration: 2000
 });
+const hero = document.querySelector(".hero");
+
+hero.addEventListener("mousemove", (e) => {
+  const x = (window.innerWidth / 2 - e.clientX) / 30;
+  const y = (window.innerHeight / 2 - e.clientY) / 30;
+
+  anime({
+    targets: '.hero-left',
+    translateX: x,
+    translateY: y,
+    duration: 300,
+    easing: 'easeOutQuad'
+  });
+
+  anime({
+    targets: '.hero-right img',
+    translateX: -x,
+    translateY: -y,
+    duration: 300,
+    easing: 'easeOutQuad'
+  });
+
+  anime({
+    targets: '.accent',
+    translateX: x * 2,
+    translateY: y * 2,
+    duration: 300,
+    easing: 'easeOutQuad'
+  });
+});
