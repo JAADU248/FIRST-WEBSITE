@@ -1,0 +1,159 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  overflow: hidden;
+}
+
+.hero-left {
+  flex: 0 0 40%;
+  padding: 100px 0;
+}
+
+.tag {
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  margin-bottom: 20px;
+}
+
+.hero-left h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.highlight {
+  color: #FF2D2D;
+}
+
+.desc {
+  margin-top: 25px;
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+.cta-btn {
+  margin-top: 30px;
+  padding: 14px 34px;
+  background: #FF2D2D;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-right img {
+  width: 95%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* ACCENTS */
+.accent {
+  position: absolute;
+  z-index: 2;
+}
+
+.accent.blue {
+  width: 55px;
+  height: 55px;
+  background: #0066FF;
+  top: 20%;
+  right: 13%;
+}
+
+.accent.red {
+  width: 95px;
+  height: 95px;
+  background: #FF2D2D;
+  top: 40%;
+  right: 9%;
+}
+
+.accent.yellow {
+  width: 55px;
+  height: 55px;
+  background: #FFD600;
+  bottom: 16%;
+  right: 11%;
+}
+
+/* OVERLAYS */
+.overlay-wire {
+  position: absolute;
+  width: 120px;
+  height: 90px;
+  border: 1px solid rgba(255,255,255,0.1);
+  top: 35%;
+  right: 7%;
+}
+
+.overlay-cross {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 26%;
+  right: 18%;
+}
+
+.overlay-cross::before,
+.overlay-cross::after {
+  content: '';
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+}
+
+.overlay-cross::before {
+  width: 100%;
+  height: 1px;
+  top: 50%;
+}
+
+.overlay-cross::after {
+  width: 1px;
+  height: 100%;
+  left: 50%;
+}
+
+.overlay-line {
+  position: absolute;
+  width: 150px;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  top: 55%;
+  right: 5%;
+}
+
+/* MOBILE */
+@media (max-width: 860px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .accent,
+  .overlay-wire,
+  .overlay-cross,
+  .overlay-line {
+    display: none;
+  }
+}
