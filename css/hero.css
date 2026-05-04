@@ -1,3 +1,5 @@
+/* ================= HERO ================= */
+
 .hero {
   position: relative;
   display: flex;
@@ -10,27 +12,63 @@
   overflow: hidden;
 }
 
+/* GRID + GLOW */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,45,45,0.25), transparent 70%);
+  top: 20%;
+  right: 10%;
+  z-index: 0;
+}
+
+/* LEFT PANEL */
 .hero-left {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   flex: 0 0 40%;
-  padding: 100px 0;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
 }
 
-.tag {
-  font-size: 12px;
-  letter-spacing: 0.35em;
-  margin-bottom: 20px;
+.hero-left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    120deg,
+    rgba(255,45,45,0.15),
+    transparent
+  );
+  z-index: -1;
 }
 
-.hero-left h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(3rem, 6vw, 5.5rem);
-  line-height: 0.95;
-  text-transform: uppercase;
+/* TEXT */
+.hero-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .highlight {
@@ -38,45 +76,44 @@
 }
 
 .desc {
-  margin-top: 25px;
-  line-height: 1.7;
   max-width: 500px;
+  line-height: 1.7;
 }
 
 .cta-btn {
-  margin-top: 30px;
   padding: 14px 34px;
   background: #FF2D2D;
-  color: #fff;
-  text-decoration: none;
   border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
 }
 
+.cta-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* RIGHT IMAGE */
 .hero-right {
+  position: relative;
+  z-index: 5;
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
 }
 
 .hero-right img {
-  width: 95%;
-  height: auto;
-  display: block;
-  position: relative;
-  z-index: 3;
-}
-.hero-title span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(40px);
+  width: 110%;
+  max-width: 650px;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.6));
 }
 
 /* ACCENTS */
 .accent {
   position: absolute;
-  z-index: 6;
+  z-index: 3;
   pointer-events: none;
+  border-radius: 6px;
 }
 
 .accent.blue {
@@ -102,57 +139,14 @@
   bottom: 16%;
   right: 11%;
 }
-.accent,
+
+/* OVERLAYS */
 .overlay-wire,
 .overlay-cross,
 .overlay-line {
+  position: absolute;
+  z-index: 2;
   pointer-events: none;
-}
-
-/* OVERLAYS */
-.overlay-wire {
-  position: absolute;
-  width: 120px;
-  height: 90px;
-  border: 1px solid rgba(255,255,255,0.1);
-  top: 35%;
-  right: 7%;
-}
-
-.overlay-cross {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 26%;
-  right: 18%;
-}
-
-.overlay-cross::before,
-.overlay-cross::after {
-  content: '';
-  position: absolute;
-  background: rgba(255,255,255,0.1);
-}
-
-.overlay-cross::before {
-  width: 100%;
-  height: 1px;
-  top: 50%;
-}
-
-.overlay-cross::after {
-  width: 1px;
-  height: 100%;
-  left: 50%;
-}
-
-.overlay-line {
-  position: absolute;
-  width: 150px;
-  height: 1px;
-  background: rgba(255,255,255,0.1);
-  top: 55%;
-  right: 5%;
 }
 
 /* MOBILE */
@@ -173,57 +167,4 @@
   .overlay-line {
     display: none;
   }
-}
-.cta-btn {
-  transition: 0.3s;
-}
-
-.cta-btn:hover {
-  transform: translateY(-3px);
-}
-/* ACCENT FLOAT */
-.accent {
-  transition: transform 0.4s ease;
-  box-shadow: 0 10px 25px #FF2D2D;
-}
-
-.hero:hover .accent.blue {
-  transform: translateY(-8px);
-}
-
-.hero:hover .accent.red {
-  transform: translateY(-4px);
-}
-
-.hero:hover .accent.yellow {
-  transform: translateY(-6px);
-}
-/* HERO LAYERS FIX */
-
-/* TOP clickable content */
-nav {
-  position: relative;
-  z-index: 10;
-}
-
-.hero-left,
-.hero-right {
-  position: relative;
-  z-index: 5;
-}
-
-/* Decorative elements (background only) */
-.accent,
-.overlay-wire,
-.overlay-cross,
-.overlay-line {
-  z-index: 1;
-  pointer-events: none;
-}
-/* initial hidden state */
-.desc,
-.cta-btn,
-.hero-right img,
-.accent {
-  opacity: 0;
 }
