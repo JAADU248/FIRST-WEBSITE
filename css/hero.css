@@ -302,3 +302,24 @@
   height: 40px;
   background: rgba(255,255,255,0.2);
 }
+/* FOREGROUND (top) */
+.hero-left {
+  position: relative;
+  z-index: 5;
+}
+
+/* IMAGE (middle) */
+.hero-right img {
+  position: relative;
+  z-index: 3;
+}
+
+/* ACCENTS + OVERLAYS (TOP OF IMAGE) */
+.accent,
+.overlay-wire,
+.overlay-cross,
+.overlay-line {
+  position: absolute;
+  z-index: 6; /* image se upar */
+  pointer-events: none;
+}
