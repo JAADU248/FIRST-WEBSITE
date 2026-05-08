@@ -1,22 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-  <title>CONTACT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT ACZ</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/contact.css">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
+<!-- ================= NAV ================= -->
+
+<nav>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
     <a href="computer.html">Computer</a>
     <a href="cctv.html">CCTV</a>
     <a href="solar.html">Solar</a>
     <a href="contact.html">Contact</a>
-  </nav>
+  </div>
 
-  <h1>Contact Page</h1>
-  <script src="script.js"></script>
+  <a href="#" class="nav-cta">GET A QUOTE</a>
+
+  <button class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="contact-section">
+
+  <!-- GRID OVERLAY -->
+  <div class="contact-grid-overlay"></div>
+
+  <!-- ACCENT ELEMENTS -->
+  <div class="contact-accent red"></div>
+  <div class="contact-accent blue"></div>
+  <div class="contact-accent yellow"></div>
+
+  <!-- HEADER -->
+  <div class="contact-header">
+    <div class="contact-label">
+      <span class="dot red"></span>
+      <span>CONTACT ACZ</span>
+    </div>
+
+    <h1 class="contact-title">
+      READY TO<br>
+      <span class="highlight">SECURE</span><br>
+      YOUR SPACE?
+    </h1>
+
+    <p class="contact-desc">
+      Direct access to our technical infrastructure team. 
+      Let's engineer your next solution with precision and reliability.
+    </p>
+  </div>
+
+  <!-- CONTENT WRAPPER -->
+  <div class="contact-content">
+
+    <!-- LEFT: FORM -->
+    <div class="contact-form-wrapper">
+      <form class="contact-form" id="contactForm">
+
+        <div class="form-group">
+          <label for="name">NAME</label>
+          <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">PHONE</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="service">SERVICE TYPE</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select a Service</option>
+            <option value="cctv">CCTV Security Systems</option>
+            <option value="computer">Computer Sales & Repair</option>
+            <option value="solar">Solar Energy Systems</option>
+            <option value="integrated">Integrated Solution</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">MESSAGE</label>
+          <textarea id="message" name="message" placeholder="Describe your project requirements..." rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="contact-cta">
+          SEND REQUEST
+        </button>
+
+      </form>
+    </div>
+
+    <!-- RIGHT: INFO PANELS -->
+    <div class="contact-info-wrapper">
+
+      <div class="info-panel">
+        <div class="info-label">
+          <span class="dot blue"></span>
+          PHONE
+        </div>
+        <div class="info-value">+91 98765 43210</div>
+      </div>
+
+      <div class="info-panel">
+        <div class="info-label">
+          <span class="dot red"></span>
+          EMAIL
+        </div>
+        <div class="info-value">contact@acz.in</div>
+      </div>
+
+      <div class="info-panel">
+        <div class="info-label">
+          <span class="dot yellow"></span>
+          LOCATION
+        </div>
+        <div class="info-value">Hyderabad, Telangana<br>India</div>
+      </div>
+
+      <div class="info-panel">
+        <div class="info-label">
+          <span class="dot blue"></span>
+          HOURS
+        </div>
+        <div class="info-value">Mon - Sat: 9:00 - 18:00<br>Sunday: Closed</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+  <p>© ACZ • All Rights Reserved</p>
+</footer>
+
+<!-- JS -->
+<script src="../script.js"></script>
 
 </body>
 </html>
