@@ -1,22 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-  <title>CCTV</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACZ | CCTV Security</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/hero.css">
+  <link rel="stylesheet" href="../css/cctv.css">
+  
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
     <a href="computer.html">Computer</a>
-    <a href="cctv.html">CCTV</a>
+    <a href="cctv.html" class="active">CCTV</a>
     <a href="solar.html">Solar</a>
     <a href="contact.html">Contact</a>
-  </nav>
+  </div>
 
-  <h1>CCTV Page</h1>
-  <script src="script.js"></script>
+  <a href="#" class="nav-cta">GET A QUOTE</a>
+
+  <button class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ================= CCTV HERO ================= -->
+<section class="cctv-hero">
+  <!-- GRID OVERLAY -->
+  <div class="cctv-grid-overlay"></div>
+
+  <!-- LEFT TEXT -->
+  <div class="cctv-hero-left">
+    <div class="tagline-badges">
+      <span class="badge"><span class="dot red"></span> SECURITY SYSTEMS</span>
+    </div>
+
+    <h1 class="cctv-hero-title">
+      <span>TOTAL</span><br>
+      <span class="highlight">SURVEILLANCE</span>
+    </h1>
+
+    <p class="cctv-hero-desc">
+      24/7 smart CCTV solutions with AI-powered monitoring, night vision, and remote access. Engineered for maximum security.
+    </p>
+
+    <a href="#" class="cta-btn">SECURE YOUR SPACE</a>
+  </div>
+
+  <!-- RIGHT VISUAL -->
+  <div class="cctv-hero-right">
+    <div class="cctv-image-container">
+      <img src="../assets/images/cp-plus-dome.png" alt="CCTV Dome Camera" class="cctv-main-image">
+      <img src="../assets/images/dome-wireframe.png" alt="Wireframe Overlay" class="cctv-wireframe-overlay">
+      
+      <!-- SCANNING LINE -->
+      <div class="cctv-scan-line"></div>
+    </div>
+    
+    <!-- RED ACCENT -->
+    <div class="accent red"></div>
+  </div>
+</section>
+
+<!-- ================= FEATURE CARDS ================= -->
+<section class="cctv-features">
+  <div class="features-grid">
+    <!-- CARD 1 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">📡</div>
+      <h3>LIVE MONITORING</h3>
+      <p>Real-time 24/7 surveillance with instant alerts.</p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🌙</div>
+      <h3>NIGHT VISION</h3>
+      <p>Clear visibility in complete darkness.</p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">📱</div>
+      <h3>REMOTE ACCESS</h3>
+      <p>Access feeds from anywhere via mobile or desktop.</p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🤖</div>
+      <h3>AI SECURITY</h3>
+      <p>Smart motion detection and threat recognition.</p>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🚶</div>
+      <h3>MOTION DETECTION</h3>
+      <p>Automated alerts for unusual movement.</p>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">📲</div>
+      <h3>MOBILE CONTROL</h3>
+      <p>Full system control from your smartphone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© ACZ • All Rights Reserved</p>
+</footer>
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="../script.js"></script>
 
 </body>
 </html>
