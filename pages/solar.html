@@ -1,22 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="css">
-  <title>SOLAR</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACZ | Solar Systems</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/solar.css">
+  
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
     <a href="computer.html">Computer</a>
     <a href="cctv.html">CCTV</a>
-    <a href="solar.html">Solar</a>
+    <a href="solar.html" class="active">Solar</a>
     <a href="contact.html">Contact</a>
-  </nav>
+  </div>
 
-  <h1>Solar Page</h1>
-  <script src="script.js"></script>
+  <a href="#" class="nav-cta">GET A QUOTE</a>
+
+  <button class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ================= SOLAR HERO ================= -->
+<section class="solar-hero">
+
+  <!-- GRID OVERLAY -->
+  <div class="solar-grid-overlay"></div>
+
+  <!-- FLOATING GEOMETRIC SHAPES -->
+  <div class="solar-float-shape circle" style="width: 100px; height: 100px; top: 10%; right: 5%;"></div>
+  <div class="solar-float-shape triangle" style="top: 70%; left: 5%;"></div>
+  <div class="solar-float-shape circle" style="width: 60px; height: 60px; bottom: 15%; right: 20%;"></div>
+
+  <!-- ENERGY FLOW LINES -->
+  <div class="solar-energy-line" style="top: 30%;"></div>
+  <div class="solar-energy-line" style="top: 50%; animation-delay: -5s;"></div>
+  <div class="solar-energy-line" style="top: 70%; animation-delay: -10s;"></div>
+
+  <!-- LEFT TEXT -->
+  <div class="solar-hero-left">
+    <div class="solar-tech-label">RENEWABLE INFRASTRUCTURE</div>
+
+    <h1 class="solar-hero-title">
+      <span>SMART</span><br>
+      <span class="highlight">SOLAR</span><br>
+      <span>INFRASTRUCTURE</span>
+    </h1>
+
+    <p class="solar-hero-desc">
+      Engineered solar power systems for residential, commercial, and industrial spaces. High-efficiency panels, smart inverters, and battery storage built for the future.
+    </p>
+
+    <a href="#" class="solar-cta">POWER YOUR SPACE</a>
+  </div>
+
+  <!-- RIGHT VISUAL -->
+  <div class="solar-hero-right">
+    <div class="solar-image-container">
+      <img src="../assets/images/bg-wireframe-2.png" alt="Solar Panel Wireframe" class="solar-main-image">
+      <img src="../assets/images/bg-wireframe.png" alt="Energy Grid Overlay" class="solar-wireframe-overlay">
+    </div>
+    
+    <!-- YELLOW ACCENTS -->
+    <div class="accent yellow"></div>
+    <div class="accent yellow"></div>
+    <div class="accent yellow"></div>
+  </div>
+</section>
+
+<!-- ================= FEATURE CARDS ================= -->
+<section class="solar-features">
+  <div class="section-label">OUR EXPERTISE</div>
+  <h2 class="section-title">ENGINEERED ENERGY SOLUTIONS</h2>
+
+  <div class="features-grid">
+    <!-- CARD 1 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🌞</div>
+      <h3>SOLAR INSTALLATION</h3>
+      <p>Professional rooftop and ground-mount solar panel installation with precision engineering.</p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🔋</div>
+      <h3>BATTERY SYSTEMS</h3>
+      <p>High-capacity energy storage solutions for uninterrupted power supply day and night.</p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">⚡</div>
+      <h3>SMART INVERTERS</h3>
+      <p>Advanced power conversion technology with real-time monitoring and optimization.</p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🏭</div>
+      <h3>INDUSTRIAL SOLAR</h3>
+      <p>Large-scale solar infrastructure designed for factories and industrial complexes.</p>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🏠</div>
+      <h3>RESIDENTIAL SOLAR</h3>
+      <p>Custom home solar solutions that reduce electricity bills and carbon footprint.</p>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">📊</div>
+      <h3>ENERGY OPTIMIZATION</h3>
+      <p>Smart energy management systems to maximize efficiency and minimize waste.</p>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🔄</div>
+      <h3>ENERGY BACKUP</h3>
+      <p>Reliable backup power systems that automatically activate during outages.</p>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">💰</div>
+      <h3>LONG-TERM SAVINGS</h3>
+      <p>ROI-focused solar solutions with significant long-term financial benefits.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© ACZ • All Rights Reserved</p>
+</footer>
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="../script.js"></script>
 
 </body>
 </html>

@@ -1,22 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
-  <title>COMPUTER</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACZ | Computer Systems</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/computer.css">
+  
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="computer.html">Computer</a>
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="computer.html" class="active">Computer</a>
     <a href="cctv.html">CCTV</a>
     <a href="solar.html">Solar</a>
     <a href="contact.html">Contact</a>
-  </nav>
+  </div>
 
-  <h1>Computer Page</h1>
-  <script src="script.js"></script>
+  <a href="#" class="nav-cta">GET A QUOTE</a>
+
+  <button class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ================= COMPUTER HERO ================= -->
+<section class="computer-hero">
+  <!-- GRID OVERLAY -->
+  <div class="computer-grid-overlay"></div>
+
+  <!-- LEFT TEXT -->
+  <div class="computer-hero-left">
+    <div class="computer-tech-label">DIGITAL INFRASTRUCTURE</div>
+
+    <h1 class="computer-hero-title">
+      <span>HIGH</span><br>
+      <span class="highlight">PERFORMANCE</span><br>
+      <span>COMPUTING</span>
+    </h1>
+
+    <p class="computer-hero-desc">
+      Custom-built systems, network infrastructure, and IT solutions engineered for modern workspaces. Precision-configured for maximum performance.
+    </p>
+
+    <a href="#" class="computer-cta">BUILD YOUR SETUP</a>
+  </div>
+
+  <!-- RIGHT VISUAL -->
+  <div class="computer-hero-right">
+    <div class="computer-image-container">
+      <img src="../assets/images/bg-wireframe-2.png" alt="Circuit Board" class="computer-main-image">
+      <img src="../assets/images/bg-wireframe.png" alt="Wireframe Overlay" class="computer-wireframe-overlay">
+      
+      <!-- BLUE SCAN LINE -->
+      <div class="computer-scan-line"></div>
+    </div>
+    
+    <!-- BLUE ACCENTS -->
+    <div class="accent blue"></div>
+    <div class="accent blue"></div>
+    <div class="accent blue"></div>
+  </div>
+</section>
+
+<!-- ================= FEATURE CARDS ================= -->
+<section class="computer-features">
+  <div class="section-label">OUR EXPERTISE</div>
+  <h2 class="section-title">SMART COMPUTER SOLUTIONS</h2>
+
+  <div class="features-grid">
+    <!-- CARD 1 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🖥️</div>
+      <h3>CUSTOM PC BUILDS</h3>
+      <p>Tailored systems for gaming, editing, and professional workloads.</p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🌐</div>
+      <h3>NETWORK SETUP</h3>
+      <p>Enterprise-grade networking solutions for seamless connectivity.</p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🏢</div>
+      <h3>OFFICE SYSTEMS</h3>
+      <p>Complete workspace infrastructure and productivity optimization.</p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">⚡</div>
+      <h3>HARDWARE UPGRADES</h3>
+      <p>Performance boosts with cutting-edge components and parts.</p>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">💾</div>
+      <h3>DATA MANAGEMENT</h3>
+      <p>Secure storage solutions and backup infrastructure.</p>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🔧</div>
+      <h3>IT SUPPORT</h3>
+      <p>Proactive maintenance and rapid technical assistance.</p>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">🚀</div>
+      <h3>SYSTEM OPTIMIZATION</h3>
+      <p>Maximize performance with engineered tuning and calibration.</p>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="feature-card reveal">
+      <div class="feature-icon">📡</div>
+      <h3>REMOTE ASSISTANCE</h3>
+      <p>Instant remote support and system diagnostics anywhere.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© ACZ • All Rights Reserved</p>
+</footer>
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="../script.js"></script>
 
 </body>
 </html>

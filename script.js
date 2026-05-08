@@ -27,13 +27,6 @@ if (hero) {
     targets: {},
     update: function () {
 
-      /* very subtle text movement */
-      const heroLeft = document.querySelector('.hero-left');
-      if (heroLeft) {
-        heroLeft.style.transform =
-          `translate(${mouseX * 0.5}px, ${mouseY * 0.5}px)`;
-      }
-
       /* image slightly opposite */
       const heroRightImg = document.querySelector('.hero-right img');
       if (heroRightImg) {
@@ -43,6 +36,12 @@ if (hero) {
 
       /* accents slightly more */
       document.querySelectorAll('.accent').forEach(el => {
+        el.style.transform =
+          `translate(${mouseX * 1.2}px, ${mouseY * 1.2}px)`;
+      });
+
+      /* overlay parallax */
+      document.querySelectorAll('.overlay-wire, .overlay-cross, .overlay-line').forEach(el => {
         el.style.transform =
           `translate(${mouseX * 1.2}px, ${mouseY * 1.2}px)`;
       });
@@ -112,6 +111,131 @@ if (cctvHero) {
     easing: 'linear'
   });
 }
+
+/* ================= SOLAR PARALLAX (pages/solar.html) ================= */
+
+const solarHero = document.querySelector(".solar-hero");
+
+if (solarHero) {
+  let solarMouseX = 0;
+  let solarMouseY = 0;
+
+  /* TEXT REVEAL ON PAGE LOAD */
+  anime({
+    targets: '.solar-hero-title span',
+    opacity: [0, 1],
+    translateY: [40, 0],
+    delay: anime.stagger(100),
+    duration: 800,
+    easing: 'easeOutElastic(1, .6)'
+  });
+
+  /* SOLAR PARALLAX */
+  solarHero.addEventListener("mousemove", (e) => {
+    solarMouseX = (window.innerWidth / 2 - e.clientX) / 120;
+    solarMouseY = (window.innerHeight / 2 - e.clientY) / 120;
+  });
+
+  anime({
+    targets: {},
+    update: function () {
+      /* image opposite movement (subtle) */
+      const solarMainImg = document.querySelector('.solar-main-image');
+      if (solarMainImg) {
+        solarMainImg.style.transform =
+          `translate(${-solarMouseX * 0.5}px, ${-solarMouseY * 0.5}px)`;
+      }
+
+      /* wireframe overlay slightly different */
+      const solarWireframe = document.querySelector('.solar-wireframe-overlay');
+      if (solarWireframe) {
+        solarWireframe.style.transform =
+          `translate(${-solarMouseX * 0.3}px, ${-solarMouseY * 0.3}px)`;
+      }
+
+      /* yellow accent more movement */
+      const solarAccents = document.querySelectorAll('.solar-hero-right .accent.yellow');
+      solarAccents.forEach(el => {
+        el.style.transform =
+          `translate(${solarMouseX * 1.1}px, ${solarMouseY * 1.1}px)`;
+      });
+    },
+    duration: Infinity,
+    easing: 'linear'
+  });
+
+  /* FLOATING SHAPES ANIMATION */
+  anime({
+    targets: '.solar-float-shape',
+    translateX: function() { return anime.random(-15, 15); },
+    translateY: function() { return anime.random(-15, 15); },
+    duration: 18000,
+    direction: 'alternate',
+    loop: true,
+    easing: 'easeInOutSine',
+    delay: anime.stagger(2000)
+  });
+}
+/* ================= COMPUTER PARALLAX (pages/computer.html) ================= */
+
+const computerHero = document.querySelector(".computer-hero");
+
+if (computerHero) {
+  let computerMouseX = 0;
+  let computerMouseY = 0;
+
+  /* TEXT REVEAL ON PAGE LOAD */
+  anime({
+    targets: '.computer-hero-title span',
+    opacity: [0, 1],
+    translateY: [40, 0],
+    delay: anime.stagger(100),
+    duration: 800,
+    easing: 'easeOutElastic(1, .6)'
+  });
+
+  /* COMPUTER PARALLAX */
+  computerHero.addEventListener("mousemove", (e) => {
+    computerMouseX = (window.innerWidth / 2 - e.clientX) / 100;
+    computerMouseY = (window.innerHeight / 2 - e.clientY) / 100;
+  });
+
+  anime({
+    targets: {},
+    update: function () {
+      /* text subtle movement */
+      const computerLeft = document.querySelector('.computer-hero-left');
+      if (computerLeft) {
+        computerLeft.style.transform =
+          `translate(${computerMouseX * 0.4}px, ${computerMouseY * 0.4}px)`;
+      }
+
+      /* image opposite movement */
+      const computerMainImg = document.querySelector('.computer-main-image');
+      if (computerMainImg) {
+        computerMainImg.style.transform =
+          `translate(${-computerMouseX * 0.7}px, ${-computerMouseY * 0.7}px)`;
+      }
+
+      /* wireframe overlay slightly different */
+      const computerWireframe = document.querySelector('.computer-wireframe-overlay');
+      if (computerWireframe) {
+        computerWireframe.style.transform =
+          `translate(${-computerMouseX * 0.5}px, ${-computerMouseY * 0.5}px)`;
+      }
+
+      /* blue accent more movement */
+      const computerAccents = document.querySelectorAll('.computer-hero-right .accent.blue');
+      computerAccents.forEach(el => {
+        el.style.transform =
+          `translate(${computerMouseX * 1.3}px, ${computerMouseY * 1.3}px)`;
+      });
+    },
+    duration: Infinity,
+    easing: 'linear'
+  });
+}
+
 /* SCROLL INDICATOR ANIMATION (index.html only) */
 const scrollIndicator = document.querySelector('.scroll-indicator');
 if (scrollIndicator) {

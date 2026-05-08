@@ -1,0 +1,293 @@
+/* ================= COMPUTER SYSTEMS HERO ================= */
+
+.computer-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 80px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #000;
+}
+
+/* GRID OVERLAY */
+.computer-grid-overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,102,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,102,255,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* LEFT TEXT */
+.computer-hero-left {
+  position: relative;
+  z-index: 5;
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+
+.computer-tech-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #0066FF;
+  text-transform: uppercase;
+}
+
+.computer-hero-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(4rem, 7.5vw, 7rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.computer-hero-title .highlight {
+  color: #0066FF;
+}
+
+.computer-hero-desc {
+  max-width: 520px;
+  line-height: 1.7;
+  opacity: 0.85;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+/* CTA BUTTON */
+.computer-cta {
+  display: inline-block;
+  background: #000;
+  color: #0066FF;
+  border: 2px solid #0066FF;
+  padding: 16px 32px;
+  font-family: 'Anton', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: fit-content;
+  box-shadow: 6px 6px 0px #0066FF;
+}
+
+.computer-cta:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px #0066FF;
+  background: #0066FF;
+  color: #000;
+}
+
+/* RIGHT VISUAL */
+.computer-hero-right {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 60%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.computer-image-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.computer-main-image {
+  position: relative;
+  z-index: 2;
+  width: 110%;
+  max-width: 800px;
+  height: auto;
+  filter: drop-shadow(0 40px 80px rgba(0,102,255,0.3));
+}
+
+.computer-wireframe-overlay {
+  position: absolute;
+  z-index: 3;
+  width: 110%;
+  max-width: 800px;
+  height: auto;
+  opacity: 0.3;
+  pointer-events: none;
+  filter: hue-rotate(220deg) saturate(2);
+}
+
+/* BLUE SCAN LINE */
+.computer-scan-line {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0066FF, transparent);
+  opacity: 0.6;
+  animation: computerScanMove 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes computerScanMove {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* BLUE ACCENTS */
+.computer-hero-right .accent.blue {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #0066FF;
+  z-index: 5;
+}
+
+.computer-hero-right .accent.blue:nth-child(1) { top: 20%; left: 10%; }
+.computer-hero-right .accent.blue:nth-child(2) { top: 60%; right: 15%; }
+.computer-hero-right .accent.blue:nth-child(3) { bottom: 25%; left: 20%; }
+
+/* ================= FEATURE CARDS ================= */
+
+.computer-features {
+  padding: 100px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #000;
+  border-top: 1px solid rgba(0,102,255,0.2);
+}
+
+.computer-features .section-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #0066FF;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.computer-features .section-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 60px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  padding: 30px;
+  border: 1px solid #0066FF;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: rgba(0,102,255,0.02);
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: #fff;
+  box-shadow: 0 10px 25px rgba(0,102,255,0.2);
+  background: rgba(0,102,255,0.05);
+}
+
+.feature-icon {
+  font-size: 32px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  color: #0066FF;
+}
+
+.feature-card h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.feature-card p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  opacity: 0.7;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* ================= RESPONSIVENESS ================= */
+
+@media (max-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 860px) {
+  .computer-hero {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .computer-hero-left,
+  .computer-hero-right {
+    width: 100%;
+    flex: none;
+  }
+
+  .computer-hero-right {
+    margin-top: 40px;
+    justify-content: center;
+  }
+
+  .computer-main-image,
+  .computer-wireframe-overlay {
+    width: 90%;
+  }
+
+  .computer-features {
+    padding: 60px 20px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .computer-cta {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .computer-scan-line,
+  .accent.blue {
+    display: none;
+  }
+}

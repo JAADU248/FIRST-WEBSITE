@@ -1,0 +1,311 @@
+/* ================= SOLAR SYSTEMS HERO ================= */
+
+.solar-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 80px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #000;
+}
+
+/* YELLOW GRID OVERLAY */
+.solar-grid-overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,214,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,214,0,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* LEFT TEXT */
+.solar-hero-left {
+  position: relative;
+  z-index: 5;
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+
+.solar-tech-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #FFD600;
+  text-transform: uppercase;
+}
+
+.solar-hero-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(4rem, 7.5vw, 7rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.solar-hero-title .highlight {
+  color: #FFD600;
+}
+
+.solar-hero-desc {
+  max-width: 520px;
+  line-height: 1.7;
+  opacity: 0.85;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+/* CTA BUTTON */
+.solar-cta {
+  display: inline-block;
+  background: #000;
+  color: #FFD600;
+  border: 2px solid #FFD600;
+  padding: 16px 32px;
+  font-family: 'Anton', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: fit-content;
+  box-shadow: 6px 6px 0px #FFD600;
+}
+
+.solar-cta:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px #FFD600;
+  background: #FFD600;
+  color: #000;
+}
+
+/* RIGHT VISUAL */
+.solar-hero-right {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 60%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.solar-image-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.solar-main-image {
+  position: relative;
+  z-index: 2;
+  width: 110%;
+  max-width: 800px;
+  height: auto;
+  filter: drop-shadow(0 40px 80px rgba(255,214,0,0.3));
+}
+
+.solar-wireframe-overlay {
+  position: absolute;
+  z-index: 3;
+  width: 110%;
+  max-width: 800px;
+  height: auto;
+  opacity: 0.3;
+  pointer-events: none;
+  filter: hue-rotate(60deg) saturate(2);
+}
+
+/* ENERGY FLOW LINES */
+.solar-energy-line {
+  position: absolute;
+  z-index: 4;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FFD600, transparent);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: solarEnergyFlow 15s linear infinite;
+}
+
+@keyframes solarEnergyFlow {
+  0% { left: -100%; width: 30%; }
+  100% { left: 100%; width: 30%; }
+}
+
+/* YELLOW ACCENTS */
+.solar-hero-right .accent.yellow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #FFD600;
+  z-index: 5;
+}
+
+.solar-hero-right .accent.yellow:nth-child(1) { top: 20%; left: 10%; }
+.solar-hero-right .accent.yellow:nth-child(2) { top: 60%; right: 15%; }
+.solar-hero-right .accent.yellow:nth-child(3) { bottom: 25%; left: 20%; }
+
+/* FLOATING GEOMETRIC SHAPES */
+.solar-float-shape {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.solar-float-shape.circle {
+  border-radius: 50%;
+  border: 2px solid #FFD600;
+}
+
+.solar-float-shape.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #FFD600;
+}
+
+/* ================= FEATURE CARDS ================= */
+
+.solar-features {
+  padding: 100px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #000;
+  border-top: 1px solid rgba(255,214,0,0.2);
+}
+
+.solar-features .section-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #FFD600;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.solar-features .section-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 60px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  padding: 30px;
+  border: 1px solid #FFD600;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: rgba(255,214,0,0.02);
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: #fff;
+  box-shadow: 0 10px 25px rgba(255,214,0,0.2);
+  background: rgba(255,214,0,0.05);
+}
+
+.feature-icon {
+  font-size: 32px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  color: #FFD600;
+}
+
+.feature-card h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.feature-card p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  opacity: 0.7;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* ================= RESPONSIVENESS ================= */
+
+@media (max-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 860px) {
+  .solar-hero {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .solar-hero-left,
+  .solar-hero-right {
+    width: 100%;
+    flex: none;
+  }
+
+  .solar-hero-right {
+    margin-top: 40px;
+    justify-content: center;
+  }
+
+  .solar-main-image,
+  .solar-wireframe-overlay {
+    width: 90%;
+  }
+
+  .solar-features {
+    padding: 60px 20px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .solar-cta {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .solar-energy-line,
+  .solar-float-shape,
+  .accent.yellow {
+    display: none;
+  }
+}
