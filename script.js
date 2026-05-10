@@ -1,4 +1,5 @@
 /* ================= HERO PARALLAX (index.html) ================= */
+/* NOTE: Text elements (hero-title, tagline-badges, desc, cta-group) intentionally NOT moved */
 
 const hero = document.querySelector(".hero");
 
@@ -22,25 +23,52 @@ if (hero) {
     mouseY = (window.innerHeight / 2 - e.clientY) / 80;
   });
 
-  /* smooth loop */
+  /* smooth loop — only decorative overlays move, text stays stable */
   anime({
     targets: {},
     update: function () {
 
-      /* image slightly opposite */
-      const heroRightImg = document.querySelector('.hero-right img');
-      if (heroRightImg) {
-        heroRightImg.style.transform =
-          `translate(${-mouseX * 0.8}px, ${-mouseY * 0.8}px)`;
+      /* Building background (slow layer) */
+      const buildingBg = document.querySelector('.hero-right .building-bg');
+      if (buildingBg) {
+        buildingBg.style.transform =
+          `translate(${-mouseX * 0.3}px, ${-mouseY * 0.3}px)`;
       }
 
-      /* accents slightly more */
-      document.querySelectorAll('.accent').forEach(el => {
+      /* CCTV focal point (medium layer) */
+      const cctvFocal = document.querySelector('.cctv-focal');
+      if (cctvFocal) {
+        cctvFocal.style.transform =
+          `translate(calc(-50% + ${-mouseX * 0.5}px), calc(-50% + ${-mouseY * 0.5}px)) scale(1.1)`;
+      }
+
+      /* Dome wireframe (matches CCTV) */
+      const domeWire = document.querySelector('.dome-wireframe');
+      if (domeWire) {
+        domeWire.style.transform =
+          `translate(calc(-50% + ${-mouseX * 0.4}px), calc(-50% + ${-mouseY * 0.4}px)) scale(1.05)`;
+      }
+
+      /* Solar panel (foreground, moves slightly more) */
+      const solarPanel = document.querySelector('.solar-panel');
+      if (solarPanel) {
+        solarPanel.style.transform =
+          `translate(${mouseX * 0.8}px, ${mouseY * 0.8}px)`;
+      }
+
+      /* Geo blocks (mid-layer) */
+      document.querySelectorAll('.geo-block').forEach(el => {
         el.style.transform =
-          `translate(${mouseX * 1.2}px, ${mouseY * 1.2}px)`;
+          `translate(${mouseX * 0.7}px, ${mouseY * 0.7}px)`;
       });
 
-      /* overlay parallax */
+      /* HUD elements (faster overlay) */
+      document.querySelectorAll('.hud-reticle, .hud-line').forEach(el => {
+        el.style.transform =
+          `translate(${mouseX * 1.1}px, ${mouseY * 1.1}px)`;
+      });
+
+      /* Top overlay accents */
       document.querySelectorAll('.overlay-wire, .overlay-cross, .overlay-line').forEach(el => {
         el.style.transform =
           `translate(${mouseX * 1.2}px, ${mouseY * 1.2}px)`;
